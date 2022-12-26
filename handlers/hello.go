@@ -26,7 +26,7 @@ func (h *Hello) ServeHTTP(w http.ResponseWriter, r *http.Request) {
     http.Error(w, "Oops", http.StatusBadRequest)
     return
   }
-  log.Printf("Data: %s\n", data)
+  h.logger.Printf("Data: %s\n", data)
 
   // write response to the user
   fmt.Fprintf(w, "Hello %s\n", data)
